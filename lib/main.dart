@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_api/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,6 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Scaffold());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "Netflix",
+        home: HomeScreen());
   }
 }
