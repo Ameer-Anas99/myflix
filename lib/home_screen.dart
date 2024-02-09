@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_api/widget/movie_slider.dart';
+import 'package:netflix_api/widget/trending_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,37 +28,38 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Trending Movies",
-              style: GoogleFonts.aBeeZee(fontSize: 25),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: CarouselSlider.builder(
-                itemCount: 10,
-                options: CarouselOptions(
-                    height: 300,
-                    autoPlay: true,
-                    viewportFraction: 0.55,
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    autoPlayAnimationDuration: Duration(seconds: 2)),
-                itemBuilder: (context, itemIndex, pageviewIndex) {
-                  return ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Container(
-                      height: 300,
-                      width: 200,
-                      color: Colors.pink,
-                    ),
-                  );
-                },
+        physics: const BouncingScrollPhysics(),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Trending Movies",
+                style: GoogleFonts.aBeeZee(fontSize: 25, color: Colors.amber),
               ),
-            )
-          ],
+              const SizedBox(
+                height: 30,
+              ),
+              const TrendingSlider(),
+              const SizedBox(
+                height: 30,
+              ),
+              Text(
+                "Top rated movies",
+                style: GoogleFonts.aBeeZee(fontSize: 25, color: Colors.amber),
+              ),
+              const MovieSlider(),
+              const SizedBox(
+                height: 30,
+              ),
+              Text(
+                "upcoming movies",
+                style: GoogleFonts.aBeeZee(fontSize: 25, color: Colors.amber),
+              ),
+              const MovieSlider()
+            ],
+          ),
         ),
       ),
     );
