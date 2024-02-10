@@ -57,7 +57,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 "upcoming movies",
                 style: GoogleFonts.aBeeZee(fontSize: 25, color: Colors.amber),
               ),
-              const MovieSlider()
+              const MovieSlider(),
+              const SizedBox(height: 30),
+              Text(
+                "upcoming movies",
+                style: GoogleFonts.aBeeZee(fontSize: 25, color: Colors.amber),
+              ),
+              const MovieSlider(),
             ],
           ),
         ),
