@@ -1,6 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_api/models/movie.dart';
+import 'package:netflix_api/service/api_service.dart';
 import 'package:netflix_api/widget/movie_slider.dart';
 import 'package:netflix_api/widget/trending_slider.dart';
 
@@ -12,6 +13,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late Future<List<Movie>> trendingMovies;
+
+  @override
+  void initState() {
+    super.initState();
+    trendingMovies = Api().getTrendingMovies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
