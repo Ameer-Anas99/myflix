@@ -1,3 +1,6 @@
+import 'package:dio/dio.dart';
+import 'package:netflix_api/models/movie_model.dart';
+
 class ApiService {
   Dio dio = Dio();
   Future<List<MovieModel>> getMovies({required String apiUrl}) async {
