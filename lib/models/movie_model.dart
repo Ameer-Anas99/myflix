@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class MovieModel {
   String? backdropPath;
   int? id;
@@ -30,7 +28,7 @@ class MovieModel {
       required this.popularity,
       required this.voterCount});
 
-  factory MovieModel.fromjson(Map<String, dynamic> json) {
+  factory MovieModel.fromJson(Map<String, dynamic> json) {
     return MovieModel(
       backdropPath: json['backdrop_path'] ?? 'no data',
       id: json['id'] ?? 'no data',
