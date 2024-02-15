@@ -1,21 +1,20 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
-import 'package:netflix_api/constants.dart';
-import 'package:netflix_api/models/movie.dart';
-
-class Api {
-  static const _trendingUrl =
-      'https://api.themoviedb.org/3/trending/movie/day?api_key=${Constants.apikey}';
-
-  Future<List<Movie>> getTrendingMovies() async {
-    final response = await http.get(Uri.parse(_trendingUrl));
-    if (response.statusCode == 200) {
-      final decodeData = json.decode(response.body)['results'] as List;
-      print(decodeData);
-      return decodeData.map((movie) => Movie.fromjson(movie)).toList();
-    } else {
-      throw Exception("Something happend");
+class ApiService {
+  Dio dio = Dio();
+  Future<List<MovieModel>> getMovies({required String apiUrl}) async {
+    var url = apiUrl;
+    try {
+      Response response = await dio.get(url);
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> jsonList = response.data;
+        List<dynamic> movies = jsonList["results"];
+        return movies.map((json) {
+          return MovieModel.fromJson(json);
+        }).toList();
+      } else {
+        throw Exception('Failed to load movies');
+      }
+    } catch (error) {
+      throw Exception('Failed to load Movies: $error');
     }
   }
 }
