@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:themovieapp/constants/secret.dart';
-import 'package:themovieapp/helpers/colors.dart';
-import 'package:themovieapp/helpers/spacing.dart';
-import 'package:themovieapp/model/movie_model.dart';
-import 'package:themovieapp/service/api_service.dart';
-import 'package:themovieapp/views/details_page.dart';
+import 'package:netflix_api/constants/secret.dart';
+import 'package:netflix_api/helpers/colors.dart';
+import 'package:netflix_api/helpers/spicing.dart';
+import 'package:netflix_api/models/movie_model.dart';
+import 'package:netflix_api/service/api_service.dart';
+import 'package:netflix_api/views/details_page.dart';
 
 class MovieList extends StatelessWidget {
   const MovieList({super.key});

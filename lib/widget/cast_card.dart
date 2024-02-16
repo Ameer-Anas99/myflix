@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_api/constants/secret.dart';
+import 'package:netflix_api/helpers/colors.dart';
+import 'package:netflix_api/models/cast_provider.dart';
+
+class CastCardWidget extends StatelessWidget {
+  const CastCardWidget({
+    super.key,
+    required this.cast,
+  });
+
+  final List<CastModel> cast;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 130,
+      width: double.infinity,
+      child: ListView.builder(
+        itemCount: cast.length,
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        itemBuilder: (context, index) {
+          CastModel casts = cast[index];
+          return Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: carousalBackgroundColor(),
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: CircleAvatar(
+                        backgroundColor: const Color.fromARGB(255, 2, 11, 49),
+                        radius: 45,
+                        foregroundImage: NetworkImage(
+                            '${ApiConstants().imageUrl}${casts.profilePath}'),
+                      ),
+                    ),
+                  ),
+                ),
+                Text(casts.name!, style: GoogleFonts.abel(color: Colors.white)),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}

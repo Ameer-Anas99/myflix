@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:themovieapp/helpers/colors.dart';
-import 'package:themovieapp/helpers/spacing.dart';
-import 'package:themovieapp/helpers/texts.dart';
-import 'package:themovieapp/widgets/bottom_bar.dart';
+import 'package:netflix_api/helpers/colors.dart';
+import 'package:netflix_api/helpers/spicing.dart';
+import 'package:netflix_api/helpers/texts.dart';
+import 'package:netflix_api/widget/bottom_bar.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

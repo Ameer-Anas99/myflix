@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
-
+import 'package:netflix_api/constants/secret.dart';
+import 'package:netflix_api/controller/search_provider.dart';
+import 'package:netflix_api/helpers/colors.dart';
+import 'package:netflix_api/helpers/spicing.dart';
+import 'package:netflix_api/views/details_page.dart';
 import 'package:provider/provider.dart';
-import 'package:themovieapp/constants/secret.dart';
-import 'package:themovieapp/controller/search_provider.dart';
-import 'package:themovieapp/helpers/colors.dart';
-import 'package:themovieapp/helpers/spacing.dart';
-import 'package:themovieapp/views/details_page.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);

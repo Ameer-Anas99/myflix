@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+import 'package:netflix_api/constants/secret.dart';
+import 'package:netflix_api/models/cast_provider.dart';
+import 'package:netflix_api/service/api_service.dart';
+import 'package:netflix_api/widget/cast_card.dart';
+
+class CastListBuilderWidget extends StatelessWidget {
+  const CastListBuilderWidget({
+    super.key,
+    required this.apiconst,
+    required this.type,
+    required this.id,
+  });
+
+  final ApiConstants apiconst;
+  final String? type;
+  final int? id;
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+        future: ApiService().getCasts(
+            castsUrl:
+                '${apiconst.base}/$type/$id${apiconst.castendPoint}${apiconst.apiKey}'),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error${snapshot.error}'));
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return const Center(
+              child: Text('Data is not Available',
+                  style: TextStyle(color: Colors.white)),
+            );
+          } else {
+            List<CastModel> cast = snapshot.data!;
+            return CastCardWidget(cast: cast);
+          }
+        });
+  }
+}

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:themovieapp/constants/secret.dart';
-import 'package:themovieapp/helpers/colors.dart';
-import 'package:themovieapp/helpers/texts.dart';
-import 'package:themovieapp/helpers/spacing.dart';
-import 'package:themovieapp/service/api_service.dart';
-import 'package:themovieapp/widgets/tvlist_builder_widget.dart';
+import 'package:netflix_api/constants/secret.dart';
+import 'package:netflix_api/helpers/colors.dart';
+import 'package:netflix_api/helpers/spicing.dart';
+import 'package:netflix_api/helpers/texts.dart';
+import 'package:netflix_api/service/api_service.dart';
+import 'package:netflix_api/widget/tv_list_builder_widget.dart';
 
 // ignore: must_be_immutable
 class TvShowsPage extends StatelessWidget {

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_api/constants/secret.dart';
+import 'package:netflix_api/controller/home_provider.dart';
+import 'package:netflix_api/helpers/colors.dart';
+import 'package:netflix_api/helpers/spicing.dart';
+import 'package:netflix_api/helpers/texts.dart';
+import 'package:netflix_api/service/api_service.dart';
+import 'package:netflix_api/widget/carousel_widget.dart';
+import 'package:netflix_api/widget/movie_list_builder.dart';
+import 'package:netflix_api/widget/tv_list_builder_widget.dart';
 import 'package:provider/provider.dart';
-import 'package:themovieapp/constants/secret.dart';
-import 'package:themovieapp/controller/home_provider.dart';
-import 'package:themovieapp/helpers/colors.dart';
-import 'package:themovieapp/helpers/texts.dart';
-import 'package:themovieapp/helpers/spacing.dart';
-import 'package:themovieapp/service/api_service.dart';
-import 'package:themovieapp/widgets/carousal_widget.dart';
-import 'package:themovieapp/widgets/movielist_builder_widget.dart';
-import 'package:themovieapp/widgets/tvlist_builder_widget.dart';
 
 class HomePage extends StatefulWidget {
   // ignore: use_key_in_widget_constructors
