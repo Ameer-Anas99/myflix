@@ -26,7 +26,7 @@ class CarousalWidget extends StatelessWidget {
         child: CarouselSlider.builder(
           itemCount: homeProvider.movies!.length,
           options: CarouselOptions(
-            height: height * 0.43,
+            height: height * 0.42,
             enlargeCenterPage: true,
             autoPlay: true,
             aspectRatio: 16 / 9,

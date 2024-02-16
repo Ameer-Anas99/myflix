@@ -52,12 +52,11 @@ class _HomePageState extends State<HomePage> {
                         height: 50,
                         decoration: const BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/video-play-4-24 (1).png'))),
+                                image: AssetImage('assets/movie img.jpeg'))),
                       ),
                     ),
                     Text(
-                      'Movies_',
+                      'Movies',
                       style: GoogleFonts.aBeeZee(
                           color: Colors.white, fontSize: 25),
                     ),
