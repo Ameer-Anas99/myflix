@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_api/constants/secret.dart';
 import 'package:netflix_api/helpers/colors.dart';
-import 'package:netflix_api/models/cast_provider.dart';
+import 'package:netflix_api/models/cast_model.dart';
 
 class CastCardWidget extends StatelessWidget {
   const CastCardWidget({

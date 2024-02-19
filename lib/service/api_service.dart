@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:netflix_api/models/cast_provider.dart';
+import 'package:netflix_api/models/cast_model.dart';
 import 'package:netflix_api/models/movie_model.dart';
 
 class ApiService {

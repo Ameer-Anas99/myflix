@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_api/constants/secret.dart';
-import 'package:netflix_api/models/cast_provider.dart';
+import 'package:netflix_api/models/cast_model.dart';
 import 'package:netflix_api/service/api_service.dart';
 import 'package:netflix_api/widget/cast_card.dart';
 
